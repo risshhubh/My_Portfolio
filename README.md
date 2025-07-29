@@ -26,23 +26,6 @@ Live: [https://risshhubh.github.io/My_Portfolio](https://risshhubh.github.io/My_
 ---
 
 ## 📁 Folder Structure
-
-My_Portfolio/
-│
-├── client/ # React Frontend
-│ ├── public/
-│ └── src/
-│
-├── server/ # Node Backend
-│ ├── routes/
-│ ├── controllers/
-│ ├── models/
-│ ├── .env # [Ignored] Environment variables
-│
-├── .gitignore
-├── README.md
-└── package.json
-
 ---
 
 ## 🔐 Environment Variables
