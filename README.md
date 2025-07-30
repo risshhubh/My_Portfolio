@@ -7,25 +7,6 @@ A responsive, modern **developer portfolio** styled like a **mobile interface**,
 
 ---
 
-## 📁 Project Structure
-
-Portfolio/
-├── client/
-│   ├── public/
-│   │   ├── feasto/           # Project screenshots
-│   │   ├── profilephoto.jpg  # Profile image
-│   │   └── Resume.pdf        # Resume file
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── pages/        # App pages
-│   │   │   ├── StatusBar.jsx # Dynamic status bar
-│   │   │   └── HomeSlides.jsx # Navigation
-│   │   └── App.jsx
-│   └── vite.config.js        # Vite configuration
-└── README.md
-```
----
-
 ## 🛠️ Tech Stack
 
 - **Frontend**: React.js, TailwindCSS, Vite
