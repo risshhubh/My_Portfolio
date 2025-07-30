@@ -9,26 +9,21 @@ A responsive, modern **developer portfolio** styled like a **mobile interface**,
 
 ## 📁 Project Structure
 
-My_Portfolio/
-│
-├── client/ # React frontend styled like a mobile device
-│ ├── public/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ └── App.jsx
-│ ├── index.html
-│ └── vite.config.js
-│
-├── server/ # Node.js backend with Express & MongoDB
-│ ├── models/
-│ ├── routes/
-│ ├── controllers/
-│ ├── .env
-│ └── index.js
-│
+Portfolio/
+├── client/
+│   ├── public/
+│   │   ├── feasto/           # Project screenshots
+│   │   ├── profilephoto.jpg  # Profile image
+│   │   └── Resume.pdf        # Resume file
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── pages/        # App pages
+│   │   │   ├── StatusBar.jsx # Dynamic status bar
+│   │   │   └── HomeSlides.jsx # Navigation
+│   │   └── App.jsx
+│   └── vite.config.js        # Vite configuration
 └── README.md
-
+```
 ---
 
 ## 🛠️ Tech Stack
