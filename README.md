@@ -1,85 +1,129 @@
-# 💼 My Portfolio - Rishabh Srivastava
+# 🌐 My_Portfolio
 
-An interactive mobile-style portfolio web app built using **React.js**, showcasing my projects, skills, and resume with a unique app-like UI and integrated chatbot support.
+A responsive, modern **developer portfolio** styled like a **mobile interface**, featuring animated screens, apps-style layout, and real-time backend support. Built using **React.js**, **Node.js**, **MongoDB**, and **Vite**.
 
----
-
-## 🔥 Live Demo
-
-🌐 [View Live Portfolio](https://risshhubh.github.io/My_Portfolio)
+> 🚀 **Live Portfolio Frontend**: [Visit Now](https://risshhubh.github.io/My_Portfolio/)  
+> 🌐 **Backend API Hosted on Render**: [https://my-portfolio-backend.onrender.com](https://my-portfolio-a19u.onrender.com) *
 
 ---
 
-## 🚀 Features
+## 📁 Project Structure
 
-- 📱 **Mobile App UI** inside a styled phone frame with swipeable slides
-- ⏰ **Dynamic Lock Screen** with date, time, and wallpaper
-- 📲 **App Grid Interface** with:
-  - Resume, Certificates, Skills, Contact, Socials
-  - Clock, Notes, Music, Calendar, Camera (styled widgets)
-- ⚙️ **Overlay Modals** for app-like experience (e.g., Settings, Contact, Resume)
-- 🌗 **Light / Dark Theme Toggle**
-- 🧠 **AI Chatbot** integration via OpenRouter API (Express + MongoDB)
-- 🌍 **Location-aware** design and responsive across all screen sizes
-- 🔐 **Backend** hosted on Render, database on MongoDB Atlas
-- ✨ Smooth animations, intuitive navigation, and swipe gestures
+My_Portfolio/
+│
+├── client/ # React frontend styled like a mobile device
+│ ├── public/
+│ ├── src/
+│ │ ├── components/
+│ │ ├── pages/
+│ │ └── App.jsx
+│ ├── index.html
+│ └── vite.config.js
+│
+├── server/ # Node.js backend with Express & MongoDB
+│ ├── models/
+│ ├── routes/
+│ ├── controllers/
+│ ├── .env
+│ └── index.js
+│
+└── README.md
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Frontend:**
-- React.js
-- Tailwind CSS
-- Lucide Icons
-- React Swipeable
-- Framer Motion
-
-**Backend:**
-- Node.js + Express
-- MongoDB Atlas
-- OpenRouter API (AI Responses)
-- Render Deployment
+- **Frontend**: React.js, TailwindCSS, Vite
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB (local or Atlas)
+- **Deployment**: GitHub Pages (frontend), Render (backend)
+- **APIs**: OpenAI, custom routes
 
 ---
 
-## 📁 Folder Structure
+## 🚧 Features Implemented
 
-📦 My_Portfolio/
-┣ 📂 client/ → React frontend (mobile-style portfolio)
-┣ 📂 server/ → Express backend for AI chatbot
-┣ 📄 .env → Environment variables (MongoDB, API Key)
-┣ 📄 README.md
-
----
-
-## 🧠 Chatbot Integration
-
-- Ask career or portfolio-related questions via the chatbot.
-- Backend uses OpenRouter API for intelligent AI replies.
-- Messages are stored in MongoDB Atlas.
+- ✅ Fully Responsive Mobile UI with app-like interactions  
+- ✅ Slide-based navigation using `react-swipeable`  
+- ✅ Home, Widgets, Resume, Certificates, Contact screens  
+- ✅ Dark/Light Theme toggle across the app  
+- ✅ Animated App Icons with overlay windows  
+- ✅ Backend connection with MongoDB (via Render)  
+- ✅ Real-time contact form (optional)  
+- ✅ Skills, Social Links, Certificates with external verification  
+- ✅ Deployed frontend using GitHub Pages  
+- ✅ Deployed backend using Render with API routes
 
 ---
 
-## ⚙️ Setup Instructions
+## 🔗 Live Deployment
+
+| Component | URL |
+|----------|-----|
+| 🌐 **Frontend (GitHub Pages)** | [`https://risshhubh.github.io/My_Portfolio/`](https://risshhubh.github.io/My_Portfolio/) |
+| 🛠️ **Backend (Render)**        | [https://my-portfolio-a19u.onrender.com) 
+|
+
+---
+
+## ⚙️ Local Setup Instructions
+
+### 1. Clone the Repo
 
 ```bash
-# Clone repository
 git clone https://github.com/risshhubh/My_Portfolio.git
-
-# Start backend
+cd My_Portfolio
+2. Setup Backend
+bash
+Copy
+Edit
 cd server
 npm install
-node index.js
+Create .env file in /server:
 
-# Start frontend
+env
+Copy
+Edit
+PORT=5001
+MONGODB_URI=mongodb://localhost:27017/portfolio
+Start backend:
+
+bash
+Copy
+Edit
+npm start
+3. Setup Frontend
+bash
+Copy
+Edit
 cd ../client
 npm install
 npm run dev
-📬 Contact
+To build for production:
+
+bash
+Copy
+Edit
+npm run build
+To preview built version:
+
+bash
+Copy
+Edit
+npm run preview
+🧠 Notes
+Make sure backend API on Render is correctly CORS-configured for requests from GitHub Pages.
+
+If build errors mention missing files like index-BFLHYT3g.js, clean the dist folder and remove references in index.html.
+
+Use relative paths (e.g., ./src/main.jsx) for portable Vite builds.
+
+👤 Author
 Rishabh Srivastava
 📍 Noida, India
+📞 +91 9219234185
 📧 rishabhsrivastava921@gmail.com
-📱 +91 9219234185
 🌐 GitHub
 
+📄 License
+MIT License © 2025 Rishabh Srivastava
