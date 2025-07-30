@@ -1,87 +1,85 @@
-# Welcome to My Portfolio
+# 💼 My Portfolio - Rishabh Srivastava
 
-Welcome to my personal developer portfolio — a full-stack application showcasing my work, skills, and personality. This project includes a modern React frontend and a Node.js + Express backend powered by MongoDB and OpenRouter API for intelligent features.
-
-Live: [https://risshhubh.github.io/My_Portfolio](https://risshhubh.github.io/My_Portfolio)
+An interactive mobile-style portfolio web app built using **React.js**, showcasing my projects, skills, and resume with a unique app-like UI and integrated chatbot support.
 
 ---
 
-## 🚀 Tech Stack
+## 🔥 Live Demo
 
-### 🔹 Frontend
+🌐 [View Live Portfolio](https://risshhubh.github.io/My_Portfolio)
+
+---
+
+## 🚀 Features
+
+- 📱 **Mobile App UI** inside a styled phone frame with swipeable slides
+- ⏰ **Dynamic Lock Screen** with date, time, and wallpaper
+- 📲 **App Grid Interface** with:
+  - Resume, Certificates, Skills, Contact, Socials
+  - Clock, Notes, Music, Calendar, Camera (styled widgets)
+- ⚙️ **Overlay Modals** for app-like experience (e.g., Settings, Contact, Resume)
+- 🌗 **Light / Dark Theme Toggle**
+- 🧠 **AI Chatbot** integration via OpenRouter API (Express + MongoDB)
+- 🌍 **Location-aware** design and responsive across all screen sizes
+- 🔐 **Backend** hosted on Render, database on MongoDB Atlas
+- ✨ Smooth animations, intuitive navigation, and swipe gestures
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:**
 - React.js
 - Tailwind CSS
-- React Router
+- Lucide Icons
+- React Swipeable
 - Framer Motion
 
-### 🔹 Backend
-- Node.js
-- Express.js
-- MongoDB (via Mongoose)
-- dotenv
-
-### 🔹 AI Integration
-- OpenRouter API (for dynamic AI responses)
+**Backend:**
+- Node.js + Express
+- MongoDB Atlas
+- OpenRouter API (AI Responses)
+- Render Deployment
 
 ---
 
 ## 📁 Folder Structure
+
+📦 My_Portfolio/
+┣ 📂 client/ → React frontend (mobile-style portfolio)
+┣ 📂 server/ → Express backend for AI chatbot
+┣ 📄 .env → Environment variables (MongoDB, API Key)
+┣ 📄 README.md
+
 ---
 
-## 🔐 Environment Variables
+## 🧠 Chatbot Integration
 
-To run locally, create a `.env` file inside `server/` with:
+- Ask career or portfolio-related questions via the chatbot.
+- Backend uses OpenRouter API for intelligent AI replies.
+- Messages are stored in MongoDB Atlas.
 
-```env
-PORT=5001
-MONGODB_URI=mongodb://localhost:27017/portfolio
-OPENROUTER_API_KEY=your_openrouter_api_key_here
-📦 Setup & Run Locally
-bash
-Copy
-Edit
-# Clone the repo
+---
+
+## ⚙️ Setup Instructions
+
+```bash
+# Clone repository
 git clone https://github.com/risshhubh/My_Portfolio.git
-cd My_Portfolio
 
-# Install server dependencies
+# Start backend
 cd server
 npm install
+node index.js
 
-# Start the backend
-npm run dev
-
-# In a new terminal, install frontend dependencies
+# Start frontend
 cd ../client
 npm install
+npm run dev
+📬 Contact
+Rishabh Srivastava
+📍 Noida, India
+📧 rishabhsrivastava921@gmail.com
+📱 +91 9219234185
+🌐 GitHub
 
-# Start the React frontend
-npm start
-🌐 Features
-🖼️ Mobile-style interactive UI with swipe-based navigation
-
-🧠 Smart AI integration using OpenRouter
-
-📝 Resume, certificates, contact info, and app showcase
-
-📱 PWA-like responsiveness & theme support
-
-🔒 Environment-safe with .env handling
-
----
-
-🤝 Let's Connect
-📧 Email: rishabhsrivastava921@gmail.com
-
-📱 Phone: +91 9219234185
-
-🌍 Location: Noida, India
-
-🌐 Portfolio Website
-
-🔗 LinkedIn
-
-🐙 GitHub
-
-📄 License
-This project is licensed under the MIT License.
