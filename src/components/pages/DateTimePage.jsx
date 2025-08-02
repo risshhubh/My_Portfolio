@@ -1,58 +1,17 @@
 import React, { useEffect, useState } from "react";
 import StatusBar from "../StatusBar";
-import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt, FaClock, FaUserTie } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt, FaClock, FaUserTie, FaCode } from "react-icons/fa";
 import { MdDescription } from "react-icons/md";
-import { FiPhone } from "react-icons/fi";
+import ProjectsPage from "./ProjectsPage";
 
 const DateTimePage = ({ darkMode = false }) => {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
-  const [showContact, setShowContact] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
   const [showResume, setShowResume] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const contactInfo = [
-    {
-      icon: <FaPhone className="text-xl" />,
-      label: "Phone",
-      value: "+91 9219234185",
-      href: "tel:+919219234185",
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-100",
-      darkBgColor: "bg-green-900/20",
-      action: "Call Now"
-    },
-    {
-      icon: <FaEnvelope className="text-xl" />,
-      label: "Email",
-      value: "rishabhsrivastava921@gmail.com",
-      href: "https://mail.google.com/mail/?view=cm&fs=1&to=rishabhsrivastava921@gmail.com",
-      color: "from-red-500 to-red-600",
-      bgColor: "bg-red-100",
-      darkBgColor: "bg-red-900/20",
-      action: "Send Email"
-    },
-    {
-      icon: <FaLinkedin className="text-xl" />,
-      label: "LinkedIn",
-      value: "linkedin.com/in/rishabhsrivastava921",
-      href: "https://www.linkedin.com/in/rishabh-srivastava-5a509232a/",
-      color: "from-blue-600 to-blue-700",
-      bgColor: "bg-blue-100",
-      darkBgColor: "bg-blue-900/20",
-      action: "Connect"
-    },
-    {
-      icon: <FaGithub className="text-xl" />,
-      label: "GitHub",
-      value: "github.com/risshhubh",
-      href: "https://github.com/risshhubh",
-      color: "from-gray-700 to-gray-800",
-      bgColor: "bg-gray-100",
-      darkBgColor: "bg-gray-800/20",
-      action: ""
-    }
-  ];
+
 
   useEffect(() => {
     const updateTime = () => {
@@ -102,7 +61,7 @@ const DateTimePage = ({ darkMode = false }) => {
     }
   };
 
-  const toggleContact = () => setShowContact(!showContact);
+  const toggleProjects = () => setShowProjects(!showProjects);
   const toggleResume = () => setShowResume(!showResume);
 
   return (
@@ -183,15 +142,15 @@ const DateTimePage = ({ darkMode = false }) => {
           </button>
         </form>
 
-        {/* Contact and Resume Icons */}
+        {/* Projects and Resume Icons */}
         <div className={`w-full max-w-xs flex justify-between items-center mt-6 px-4 transition-all duration-700 ease-out transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '1200ms' }}>
-          {/* Contact Icon - Left */}
-          <div className="flex flex-col items-center cursor-pointer group" onClick={toggleContact}>
+          {/* Projects Icon - Left */}
+          <div className="flex flex-col items-center cursor-pointer group" onClick={toggleProjects}>
             <div className={`${darkMode ? "bg-gradient-to-tr from-gray-700 to-gray-900" : "bg-gradient-to-tr from-white to-gray-100 shadow-md border border-gray-200"} rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center transition-transform group-hover:scale-105`}>
-              <FiPhone className={`${darkMode ? "text-white" : "text-gray-800"} text-xl sm:text-2xl`} />
+              <FaCode className={`${darkMode ? "text-white" : "text-gray-800"} text-xl sm:text-2xl`} />
             </div>
             <span className={`text-xs sm:text-sm font-bold mt-2 ${darkMode ? "text-gray-100" : "text-gray-800"} text-center w-16 sm:w-20 truncate`}>
-              Contact
+              Projects
             </span>
           </div>
 
@@ -212,157 +171,29 @@ const DateTimePage = ({ darkMode = false }) => {
         <div className={`w-24 h-1.5 rounded-full ${darkMode ? "bg-white" : "bg-gray-400"}`} />
       </div>
 
-      {/* Contact Overlay */}
-      {showContact && (
-        <div className={`absolute top-0 left-0 w-full h-full ${darkMode ? "bg-[#23272f]" : "bg-white"} z-50 shadow-2xl rounded-xl sm:rounded-2xl animate-slide-up flex flex-col`} role="dialog" aria-modal="true" aria-label="Contact Me">
+      {/* Projects Overlay */}
+      {showProjects && (
+        <div className={`absolute top-0 left-0 w-full h-full ${darkMode ? "bg-[#23272f]" : "bg-white"} z-50 shadow-2xl rounded-xl sm:rounded-2xl animate-slide-up flex flex-col`} role="dialog" aria-modal="true" aria-label="Projects">
           <div
             className={`sticky px-3 sm:px-4 py-2 border-b z-10 flex justify-between items-center ${
               darkMode ? "bg-gradient-to-br from-[#1a1a1a] to-[#2e2e2e] border-gray-700" : "bg-white border-gray-200"
             }`}
           >
             <h2 className={`text-base sm:text-lg font-bold ${darkMode ? "text-white" : "text-gray-900"}`}>
-              Contact Me
+              Projects
             </h2>
             <button
-              onClick={toggleContact}
+              onClick={toggleProjects}
               className={`text-xs sm:text-sm font-medium cursor-pointer ${
                 darkMode ? "text-blue-400" : "text-blue-600"
               }`}
-              aria-label="Close Contact Me"
+              aria-label="Close Projects"
             >
               Close
             </button>
           </div>
           <div className="flex-1 overflow-y-auto">
-            <div className={`h-full w-full bg-gradient-to-br ${darkMode ? "from-gray-900 via-gray-800 to-gray-900" : "from-blue-50 via-white to-purple-50"} px-4 py-6 overflow-y-auto hide-scrollbar`}>
-              
-              {/* Header Section */}
-              <div className="text-center mb-8">
-                <div className={`w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center ${darkMode ? "bg-gradient-to-br from-blue-600 to-purple-600" : "bg-gradient-to-br from-blue-500 to-purple-500"} shadow-lg`}>
-                  <FaUserTie className="text-white text-2xl" />
-                </div>
-                <h2 className={`text-3xl font-bold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>
-                  Get in Touch
-                </h2>
-                <p className={`text-base ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-                  Let's connect and build something amazing together
-                </p>
-              </div>
-
-              {/* Contact Cards */}
-              <div className="space-y-4 mb-8">
-                {contactInfo.map((contact, index) => (
-                  <a
-                    key={index}
-                    href={contact.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`group relative overflow-hidden rounded-2xl p-6 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer block ${
-                      darkMode 
-                        ? "bg-gray-800/50 border border-gray-700 hover:border-gray-600" 
-                        : "bg-white/80 border border-gray-200 hover:border-gray-300 shadow-md"
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-r ${contact.color} shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                          <div className="text-white">
-                            {contact.icon}
-                          </div>
-                        </div>
-                        <div>
-                          <p className={`text-sm font-medium ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
-                            {contact.label}
-                          </p>
-                          <p className={`text-base font-semibold ${darkMode ? "text-white" : "text-gray-900"}`}>
-                            {contact.value}
-                          </p>
-                        </div>
-                      </div>
-                      {contact.action && (
-                        <div className={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 transform group-hover:scale-105 ${
-                          darkMode 
-                            ? "bg-gray-700 text-gray-200 group-hover:bg-gray-600" 
-                            : "bg-gray-100 text-gray-700 group-hover:bg-gray-200"
-                        }`}>
-                          {contact.action}
-                        </div>
-                      )}
-                    </div>
-                    
-                    {/* Hover Effect Background */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${contact.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`} />
-                  </a>
-                ))}
-              </div>
-
-              {/* Additional Info Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div className={`p-4 rounded-xl ${darkMode ? "bg-gray-800/50 border border-gray-700" : "bg-white/80 border border-gray-200"} shadow-md`}>
-                  <div className="flex items-center space-x-3">
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${darkMode ? "bg-blue-900/30" : "bg-blue-100"}`}>
-                      <FaMapMarkerAlt className={`text-lg ${darkMode ? "text-blue-400" : "text-blue-600"}`} />
-                    </div>
-                    <div>
-                      <p className={`text-sm font-medium ${darkMode ? "text-gray-400" : "text-gray-500"}`}>Location</p>
-                      <p className={`text-base font-semibold ${darkMode ? "text-white" : "text-gray-900"}`}>Noida, India</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={`p-4 rounded-xl ${darkMode ? "bg-gray-800/50 border border-gray-700" : "bg-white/80 border border-gray-200"} shadow-md`}>
-                  <div className="flex items-center space-x-3">
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${darkMode ? "bg-green-900/30" : "bg-green-100"}`}>
-                      <FaClock className={`text-lg ${darkMode ? "text-green-400" : "text-green-600"}`} />
-                    </div>
-                    <div>
-                      <p className={`text-sm font-medium ${darkMode ? "text-gray-400" : "text-gray-500"}`}>Availability</p>
-                      <p className={`text-base font-semibold ${darkMode ? "text-white" : "text-gray-900"}`}>Open to Work</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Call to Action */}
-              <div className={`text-center p-6 rounded-2xl ${darkMode ? "bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-gray-700" : "bg-gradient-to-r from-blue-50 to-purple-50 border border-gray-200"} shadow-lg`}>
-                <h3 className={`text-lg font-bold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>
-                  Ready to Collaborate? 🚀
-                </h3>
-                <p className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} mb-4`}>
-                  Available for freelance, full-time, or collaborative development opportunities.
-                </p>
-                <div className="flex justify-center space-x-4">
-                  <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=rishabhsrivastava921@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`px-6 py-2 rounded-lg font-medium text-sm transition-all duration-300 transform hover:scale-105 ${
-                      darkMode 
-                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700" 
-                        : "bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600"
-                    } shadow-lg hover:shadow-xl`}
-                  >
-                    Start a Project
-                  </a>
-                  <a
-                    href="tel:+919219234185"
-                    className={`px-6 py-2 rounded-lg font-medium text-sm transition-all duration-300 transform hover:scale-105 ${
-                      darkMode 
-                        ? "bg-gray-700 text-gray-200 hover:bg-gray-600" 
-                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    } shadow-md hover:shadow-lg`}
-                  >
-                    Call Now
-                  </a>
-                </div>
-              </div>
-
-              {/* Footer */}
-              <div className={`mt-6 mb-8 text-center text-xs ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
-                <p>🌏 Based in Noida, India • Available Worldwide</p>
-                <p className="mt-1">Let's turn your ideas into reality!</p>
-              </div>
-            </div>
+            <ProjectsPage darkMode={darkMode} />
           </div>
         </div>
       )}
@@ -409,7 +240,7 @@ const DateTimePage = ({ darkMode = false }) => {
               {/* Action Buttons */}
               <div className="space-y-3">
                 <a
-                  href="https://drive.google.com/file/d/1kgazVMClami38aIoyD-qU39pn7LTijVz/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1Af2nFD3sbEboxazUWyEaXBVS-_LhFHI9/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
@@ -427,7 +258,7 @@ const DateTimePage = ({ darkMode = false }) => {
                 </a>
                 
                 <a
-                  href="https://drive.google.com/file/d/1kgazVMClami38aIoyD-qU39pn7LTijVz/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1Af2nFD3sbEboxazUWyEaXBVS-_LhFHI9/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
