@@ -15,22 +15,25 @@ app.use(express.json());
 // Routes
 app.use("/api/chatbot", chatbotRoute);
 
-// Optional: Health check route
+// Health Check
 app.get("/", (req, res) => {
-  res.send("Portfolio Chatbot Server is running");
+  res.send("✅ Portfolio Chatbot Server is running");
 });
 
 // MongoDB Connection and Server Startup
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => {
-  console.log("✅ MongoDB connected successfully");
-  app.listen(process.env.PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${process.env.PORT}`);
-  });
-})
-.catch((err) => {
-  console.error("❌ MongoDB connection error:", err);
-});
+const startServer = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log("✅ MongoDB connected successfully");
+
+    const PORT = process.env.PORT || 5001;
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running at http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.error("❌ MongoDB connection failed:", error.message);
+    process.exit(1);
+  }
+};
+
+startServer();

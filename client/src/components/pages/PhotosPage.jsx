@@ -16,35 +16,35 @@ const PhotosPage = ({ darkMode = false }) => {
       icon: "🍽️",
       photos: [
         {
-          src: "/feasto/homepage-hero.png",
+          src: "/My_Portfolio/feasto/homepage-hero.png",
           alt: "Feasto Homepage - Hero Section with 'Dine Like Royalty'"
         },
         {
-          src: "/feasto/restaurant-listing.png",
+          src: "/My_Portfolio/feasto/restaurant-listing.png",
           alt: "Feasto Restaurant Grid - Featured Restaurants"
         },
         {
-          src: "/feasto/italian-spoon-menu.png",
+          src: "/My_Portfolio/feasto/italian-spoon-menu.png",
           alt: "The Italian Spoon Menu - Restaurant Menu Page"
         },
         {
-          src: "/feasto/pizza-restaurants.png",
+          src: "/My_Portfolio/feasto/pizza-restaurants.png",
           alt: "Top Pizza Restaurants - Category Browse with Sidebar"
         },
         {
-          src: "/feasto/italian-spoon-menu-grid.png",
+          src: "/My_Portfolio/feasto/italian-spoon-menu-grid.png",
           alt: "The Italian Spoon Menu Grid - Menu Items Layout"
         },
         {
-          src: "/feasto/welcome-page.png",
+          src: "/My_Portfolio/feasto/welcome-page.png",
           alt: "Feasto Welcome Page - Burger and Fries Hero Image"
         },
         {
-          src: "/feasto/login-modal.png",
+          src: "/My_Portfolio/feasto/login-modal.png",
           alt: "Feasto Login Modal - Authentication Overlay"
         },
         {
-          src: "/feasto/signup-modal.png",
+          src: "/My_Portfolio/feasto/signup-modal.png",
           alt: "Feasto Sign Up Modal - Registration Form"
         }
       ]
@@ -192,12 +192,41 @@ const PhotosPage = ({ darkMode = false }) => {
 
         {/* Full Screen Modal */}
         {selectedPhoto && (
-          <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
-            <div ref={fullScreenRef} className="relative max-w-full max-h-full">
+          <>
+            {/* Mobile Screen Fade Away Effect */}
+            <div 
+              className={`fixed inset-0 z-40 transition-all duration-700 ease-in-out pointer-events-none ${
+                isFullScreen 
+                  ? "bg-black bg-opacity-60 backdrop-blur-sm" 
+                  : "bg-transparent"
+              }`}
+              style={{
+                background: isFullScreen 
+                  ? 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%)'
+                  : 'transparent'
+              }}
+            />
+            
+            {/* Main Modal */}
+            <div className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-all duration-700 ease-in-out ${
+              isFullScreen 
+                ? "bg-black bg-opacity-98 backdrop-blur-md" 
+                : "bg-black bg-opacity-90"
+            }`}>
+              <div 
+                ref={fullScreenRef} 
+                className={`relative max-w-full max-h-full transition-all duration-700 ease-in-out transform ${
+                  isFullScreen 
+                    ? "scale-100 opacity-100" 
+                    : "scale-95 opacity-90"
+                }`}
+              >
               {/* Close Button */}
               <button
                 onClick={handleCloseModal}
-                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-70 transition-colors"
+                className={`absolute top-4 right-4 z-10 p-2 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-70 transition-all duration-300 ease-in-out transform ${
+                  isFullScreen ? "scale-100 opacity-100" : "scale-90 opacity-80"
+                }`}
               >
                 <FaTimes className="text-xl" />
               </button>
@@ -205,7 +234,9 @@ const PhotosPage = ({ darkMode = false }) => {
               {/* Full Screen Toggle Button */}
               <button
                 onClick={toggleFullScreen}
-                className="absolute top-4 right-16 z-10 p-2 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-70 transition-colors"
+                className={`absolute top-4 right-16 z-10 p-2 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-70 transition-all duration-300 ease-in-out transform ${
+                  isFullScreen ? "scale-100 opacity-100" : "scale-90 opacity-80"
+                }`}
                 title={isFullScreen ? "Exit Full Screen (F)" : "Enter Full Screen (F)"}
               >
                 {isFullScreen ? <FaCompress className="text-xl" /> : <FaExpand className="text-xl" />}
@@ -215,7 +246,9 @@ const PhotosPage = ({ darkMode = false }) => {
               {currentPhotoIndex > 0 && (
                 <button
                   onClick={handlePreviousPhoto}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-70 transition-colors"
+                  className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-70 transition-all duration-300 ease-in-out transform ${
+                    isFullScreen ? "scale-100 opacity-100" : "scale-90 opacity-80"
+                  }`}
                 >
                   <FaChevronLeft className="text-xl" />
                 </button>
@@ -224,7 +257,9 @@ const PhotosPage = ({ darkMode = false }) => {
               {currentPhotoIndex < selectedAlbum.photos.length - 1 && (
                 <button
                   onClick={handleNextPhoto}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-70 transition-colors"
+                  className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-70 transition-all duration-300 ease-in-out transform ${
+                    isFullScreen ? "scale-100 opacity-100" : "scale-90 opacity-80"
+                  }`}
                 >
                   <FaChevronRight className="text-xl" />
                 </button>
@@ -234,21 +269,28 @@ const PhotosPage = ({ darkMode = false }) => {
               <img 
                 src={selectedPhoto.src} 
                 alt={selectedPhoto.alt} 
-                className="max-w-full max-h-full object-contain rounded-lg"
+                className={`max-w-full max-h-full object-contain rounded-lg transition-all duration-700 ease-in-out transform ${
+                  isFullScreen 
+                    ? "scale-100 opacity-100" 
+                    : "scale-95 opacity-90"
+                }`}
               />
 
               {/* Photo Counter */}
-              <div className="absolute bottom-4 left-4 right-4 bg-black bg-opacity-50 text-white p-3 rounded-lg">
+              <div className={`absolute bottom-4 left-4 right-4 bg-black bg-opacity-50 text-white p-3 rounded-lg transition-all duration-300 ease-in-out transform ${
+                isFullScreen ? "scale-100 opacity-100 translate-y-0" : "scale-95 opacity-80 translate-y-2"
+              }`}>
                 <p className="text-xs opacity-75">
                   {currentPhotoIndex + 1} of {selectedAlbum.photos.length}
                 </p>
                 <p className="text-xs opacity-75 mt-1">
                   Press F for full screen • Use arrow keys to navigate
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
+                                 </p>
+               </div>
+             </div>
+           </div>
+         </>
+         )}
       </div>
     );
   }

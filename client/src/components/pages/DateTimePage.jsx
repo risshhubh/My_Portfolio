@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import StatusBar from "../StatusBar";
-import { FaPhone, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt, FaClock, FaUserTie, FaCode } from "react-icons/fa";
 import { MdDescription } from "react-icons/md";
-import { FiPhone } from "react-icons/fi";
+import ProjectsPage from "./ProjectsPage";
 
 const DateTimePage = ({ darkMode = false }) => {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
-  const [showContact, setShowContact] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
   const [showResume, setShowResume] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+
+
 
   useEffect(() => {
     const updateTime = () => {
@@ -59,7 +61,7 @@ const DateTimePage = ({ darkMode = false }) => {
     }
   };
 
-  const toggleContact = () => setShowContact(!showContact);
+  const toggleProjects = () => setShowProjects(!showProjects);
   const toggleResume = () => setShowResume(!showResume);
 
   return (
@@ -76,19 +78,20 @@ const DateTimePage = ({ darkMode = false }) => {
       <div className="flex-1 flex flex-col items-center justify-start pt-8 sm:pt-12 px-4">
         {/* Profile Image */}
         <div className={`flex flex-col items-center mb-8 transition-all duration-700 ease-out transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '200ms' }}>
-          <div className={`w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden border-4 ${darkMode ? "border-white/20" : "border-white/30"} shadow-lg mb-4`}>
-            <img
-              src="/profile.jpg" // Replace with your image path
+          <div className={`w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden border-4 ${darkMode ? "border-white/20" : "border-white/30"} shadow-lg mb-4 relative`}>
+            <img 
+              src="/My_Portfolio/profilephoto.jpg"
               alt="Rishabh Srivastava"
               className="w-full h-full object-cover"
+              onLoad={() => console.log('Profile image loaded successfully')}
               onError={(e) => {
-                // Fallback to a placeholder if image doesn't exist
+                console.log('Profile image failed to load, showing fallback');
                 e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'flex';
               }}
             />
             {/* Placeholder fallback */}
-            <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl sm:text-2xl lg:text-3xl">
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl sm:text-2xl lg:text-3xl" style={{ display: 'none' }}>
               RS
             </div>
           </div>
@@ -139,15 +142,15 @@ const DateTimePage = ({ darkMode = false }) => {
           </button>
         </form>
 
-        {/* Contact and Resume Icons */}
+        {/* Projects and Resume Icons */}
         <div className={`w-full max-w-xs flex justify-between items-center mt-6 px-4 transition-all duration-700 ease-out transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '1200ms' }}>
-          {/* Contact Icon - Left */}
-          <div className="flex flex-col items-center cursor-pointer group" onClick={toggleContact}>
+          {/* Projects Icon - Left */}
+          <div className="flex flex-col items-center cursor-pointer group" onClick={toggleProjects}>
             <div className={`${darkMode ? "bg-gradient-to-tr from-gray-700 to-gray-900" : "bg-gradient-to-tr from-white to-gray-100 shadow-md border border-gray-200"} rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center transition-transform group-hover:scale-105`}>
-              <FiPhone className={`${darkMode ? "text-white" : "text-gray-800"} text-xl sm:text-2xl`} />
+              <FaCode className={`${darkMode ? "text-white" : "text-gray-800"} text-xl sm:text-2xl`} />
             </div>
             <span className={`text-xs sm:text-sm font-bold mt-2 ${darkMode ? "text-gray-100" : "text-gray-800"} text-center w-16 sm:w-20 truncate`}>
-              Contact
+              Projects
             </span>
           </div>
 
@@ -168,84 +171,29 @@ const DateTimePage = ({ darkMode = false }) => {
         <div className={`w-24 h-1.5 rounded-full ${darkMode ? "bg-white" : "bg-gray-400"}`} />
       </div>
 
-      {/* Contact Overlay */}
-      {showContact && (
-        <div className={`absolute top-0 left-0 w-full h-full ${darkMode ? "bg-[#23272f]" : "bg-white"} z-50 shadow-2xl rounded-xl sm:rounded-2xl animate-slide-up flex flex-col`} role="dialog" aria-modal="true" aria-label="Contact Me">
+      {/* Projects Overlay */}
+      {showProjects && (
+        <div className={`absolute top-0 left-0 w-full h-full ${darkMode ? "bg-[#23272f]" : "bg-white"} z-50 shadow-2xl rounded-xl sm:rounded-2xl animate-slide-up flex flex-col`} role="dialog" aria-modal="true" aria-label="Projects">
           <div
             className={`sticky px-3 sm:px-4 py-2 border-b z-10 flex justify-between items-center ${
               darkMode ? "bg-gradient-to-br from-[#1a1a1a] to-[#2e2e2e] border-gray-700" : "bg-white border-gray-200"
             }`}
           >
             <h2 className={`text-base sm:text-lg font-bold ${darkMode ? "text-white" : "text-gray-900"}`}>
-              Contact Me
+              Projects
             </h2>
             <button
-              onClick={toggleContact}
+              onClick={toggleProjects}
               className={`text-xs sm:text-sm font-medium cursor-pointer ${
                 darkMode ? "text-blue-400" : "text-blue-600"
               }`}
-              aria-label="Close Contact Me"
+              aria-label="Close Projects"
             >
               Close
             </button>
           </div>
           <div className="flex-1 overflow-y-auto">
-            <div className={`h-full w-full bg-gradient-to-b ${darkMode ? "from-gray-800 to-gray-900" : "from-white to-gray-100"} px-5 py-6 overflow-y-auto hide-scrollbar`}>
-              <h2 className={`text-2xl font-bold mb-6 ${darkMode ? "text-white" : "text-gray-900"}`}>Get in Touch</h2>
-
-              <div className="space-y-5">
-
-                <div className="flex items-center space-x-4">
-                  <FaPhone className="text-green-600" />
-                  <a href="tel:+919219234185" className="text-base text-blue-600 underline">
-                    +91 9219234185
-                  </a>
-                </div>
-
-               <div className="flex items-center space-x-4">
-        <FaEnvelope className="text-red-500" />
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=rishabhsrivastava921@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-base text-blue-600 underline"
-        >
-          rishabhsrivastava921@gmail.com
-        </a>
-      </div>
-
-
-                <div className="flex items-center space-x-4">
-                  <FaLinkedin className="text-blue-700" />
-                  <a
-                    href="https://www.linkedin.com/in/rishabh-srivastava-5a509232a/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-base text-blue-600 underline"
-                  >
-                    linkedin.com/in/rishabhsrivastava921
-                  </a>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <FaGithub className={`${darkMode ? "text-gray-300" : "text-gray-800"}`} />
-                  <a
-                    href="https://github.com/risshhubh"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-base text-blue-600 underline"
-                  >
-                    github.com/risshhubh
-                  </a>
-                </div>
-              </div>
-
-              <div className={`mt-10 text-sm ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
-                Available for freelance, full-time, or collaborative dev opportunities.
-                <br />
-                Based in Noida, India 🌏
-              </div>
-            </div>
+            <ProjectsPage darkMode={darkMode} />
           </div>
         </div>
       )}
@@ -292,7 +240,7 @@ const DateTimePage = ({ darkMode = false }) => {
               {/* Action Buttons */}
               <div className="space-y-3">
                 <a
-                  href="https://drive.google.com/file/d/12P1ugzET1MiTPaYhkjPogcaAE2G3isyO/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1Af2nFD3sbEboxazUWyEaXBVS-_LhFHI9/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
@@ -310,7 +258,7 @@ const DateTimePage = ({ darkMode = false }) => {
                 </a>
                 
                 <a
-                  href="https://drive.google.com/file/d/12P1ugzET1MiTPaYhkjPogcaAE2G3isyO/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1Af2nFD3sbEboxazUWyEaXBVS-_LhFHI9/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${

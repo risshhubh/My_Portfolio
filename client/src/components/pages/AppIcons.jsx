@@ -5,14 +5,13 @@ import {
   FiMessageSquare,
   FiMusic,
   FiMail,
-  FiClock,
   FiPhone,
   FiAward,
   FiLinkedin,
   FiUser,
 } from "react-icons/fi";
 import { MdPhoto, MdEventNote, MdDescription } from "react-icons/md";
-import { FaRegStickyNote, FaTools } from "react-icons/fa";
+import { FaRegStickyNote, FaTools, FaCode } from "react-icons/fa";
 import SettingsPage from "./SettingsPage";
 import ContactDetailsPage from "./ContactDetailsPage";
 import SkillsDetailsPage from "./SkillsDetailsPage";
@@ -24,7 +23,7 @@ import PhotosPage from "./PhotosPage";
 import MessagesPage from "./MessagesPage";
 import MusicPage from "./MusicPage";
 import CalendarPage from "./CalendarPage";
-import ClockPage from "./ClockPage";
+import ProjectsPage from "./ProjectsPage";
 import NotesPage from "./NotesPage";
 import CameraPage from "./CameraPage";
 
@@ -39,7 +38,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
   const [showMessages, setShowMessages] = useState(false);
   const [showMusic, setShowMusic] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
-  const [showClock, setShowClock] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
   const [showCamera, setShowCamera] = useState(false);
   const [showAboutMe, setShowAboutMe] = useState(false);
@@ -47,7 +46,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
   // Check if any subpage is open
   const isAnySubpageOpen = showSettings || showContact || showSkills || showSocialLinks || 
                           showResume || showCertificates || showPhotos || showMessages || 
-                          showMusic || showCalendar || showClock || showNotes || showCamera || showAboutMe;
+                          showMusic || showCalendar || showNotes || showCamera || showAboutMe || showProjects;
 
   // Notify parent component when subpage state changes
   React.useEffect(() => {
@@ -66,7 +65,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
   const toggleMessages = () => setShowMessages(!showMessages);
   const toggleMusic = () => setShowMusic(!showMusic);
   const toggleCalendar = () => setShowCalendar(!showCalendar);
-  const toggleClock = () => setShowClock(!showClock);
+  const toggleProjects = () => setShowProjects(!showProjects);
   const toggleNotes = () => setShowNotes(!showNotes);
   const toggleCamera = () => setShowCamera(!showCamera);
   const toggleAboutMe = () => setShowAboutMe(!showAboutMe);
@@ -78,7 +77,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
     { name: "Music", icon: <FiMusic className={`${darkMode ? "text-white" : "text-gray-800"} text-xl sm:text-2xl`} />, onClick: toggleMusic },
     { name: "Notes", icon: <FaRegStickyNote className={`${darkMode ? "text-white" : "text-gray-800"} text-xl sm:text-2xl`} />, onClick: toggleNotes },
     { name: "Calendar", icon: <MdEventNote className={`${darkMode ? "text-white" : "text-gray-800"} text-xl sm:text-2xl`} />, onClick: toggleCalendar },
-    { name: "Clock", icon: <FiClock className={`${darkMode ? "text-white" : "text-gray-800"} text-xl sm:text-2xl`} />, onClick: toggleClock },
+    { name: "Projects", icon: <FaCode className={`${darkMode ? "text-white" : "text-gray-800"} text-xl sm:text-2xl`} />, onClick: toggleProjects },
     {
       name: "Mail",
       icon: <FiMail className={`${darkMode ? "text-white" : "text-gray-800"} text-xl sm:text-2xl`} />,
@@ -211,10 +210,10 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
             <CalendarPage darkMode={darkMode} />
           </Overlay>
         )}
-        {/* Clock Overlay */}
-        {showClock && (
-          <Overlay title="Clock" onClose={toggleClock} darkMode={darkMode}>
-            <ClockPage darkMode={darkMode} />
+        {/* Projects Overlay */}
+        {showProjects && (
+          <Overlay title="Projects" onClose={toggleProjects} darkMode={darkMode}>
+            <ProjectsPage darkMode={darkMode} />
           </Overlay>
         )}
 
@@ -274,7 +273,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
                 {/* Action Buttons */}
                 <div className="space-y-3">
                   <a
-                    href="https://drive.google.com/file/d/12P1ugzET1MiTPaYhkjPogcaAE2G3isyO/view?usp=drive_link"
+                    href="https://drive.google.com/file/d/1Af2nFD3sbEboxazUWyEaXBVS-_LhFHI9/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
@@ -292,7 +291,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
                   </a>
                   
                   <a
-                    href="https://drive.google.com/file/d/12P1ugzET1MiTPaYhkjPogcaAE2G3isyO/view?usp=drive_link"
+                    href="https://drive.google.com/file/d/1Af2nFD3sbEboxazUWyEaXBVS-_LhFHI9/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
