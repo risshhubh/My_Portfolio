@@ -26,6 +26,7 @@ import CalendarPage from "./CalendarPage";
 import ProjectsPage from "./ProjectsPage";
 import NotesPage from "./NotesPage";
 import CameraPage from "./CameraPage";
+import getImagePath from "../../utils/imagePaths";
 
 const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
   const [showSettings, setShowSettings] = useState(false);
@@ -273,7 +274,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
                 {/* Action Buttons */}
                 <div className="space-y-3">
                   <a
-                    href="https://drive.google.com/file/d/1mqY1I_D6UsD3ktfwDVduHAegNnE4tWns/view?usp=drive_link"
+                    href={getImagePath("/RESUME.pdf")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
@@ -286,12 +287,12 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                      View Resume on Google Drive
+                      View Resume
                     </div>
                   </a>
                   
                   <a
-                    href="https://drive.google.com/file/d/1mqY1I_D6UsD3ktfwDVduHAegNnE4tWns/view?usp=drive_link"
+                    href={getImagePath("/RESUME.pdf")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
@@ -312,7 +313,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
                 {/* Additional Info */}
                 <div className={`mt-6 p-4 rounded-lg ${darkMode ? "bg-gray-800/50" : "bg-gray-50"}`}>
                   <p className={`text-xs text-center ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
-                    💡 Tip: Click "View Resume on Google Drive" to see the full document with better formatting
+                    💡 Tip: Click "View Resume" to see the full document in your browser
                   </p>
                 </div>
               </div>

@@ -240,49 +240,49 @@ const DateTimePage = ({ darkMode = false }) => {
 
               {/* Action Buttons */}
               <div className="space-y-3">
-                <a
-                  href="https://drive.google.com/file/d/1mqY1I_D6UsD3ktfwDVduHAegNnE4tWns/view?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
-                    darkMode 
-                      ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl" 
-                      : "bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg"
-                  }`}
-                >
-                  <div className="flex items-center justify-center gap-2">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    View Resume on Google Drive
-                  </div>
-                </a>
-                
-                <a
-                  href="https://drive.google.com/file/d/1mqY1I_D6UsD3ktfwDVduHAegNnE4tWns/view?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
-                    darkMode 
-                      ? "bg-gray-700 text-gray-100 hover:bg-gray-600 border border-gray-600" 
-                      : "bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-300"
-                  }`}
-                >
-                  <div className="flex items-center justify-center gap-2">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Download Resume
-                  </div>
-                </a>
+                                 <a
+                   href={getImagePath("/RESUME.pdf")}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                     darkMode 
+                       ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl" 
+                       : "bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg"
+                   }`}
+                 >
+                   <div className="flex items-center justify-center gap-2">
+                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                     </svg>
+                     View Resume
+                   </div>
+                 </a>
+                 
+                 <a
+                   href={getImagePath("/RESUME.pdf")}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                     darkMode 
+                       ? "bg-gray-700 text-gray-100 hover:bg-gray-600 border border-gray-600" 
+                       : "bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-300"
+                   }`}
+                 >
+                   <div className="flex items-center justify-center gap-2">
+                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                     </svg>
+                     Download Resume
+                   </div>
+                 </a>
               </div>
 
               {/* Additional Info */}
-              <div className={`mt-6 p-4 rounded-lg ${darkMode ? "bg-gray-800/50" : "bg-gray-50"}`}>
-                <p className={`text-xs text-center ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
-                  💡 Tip: Click "View Resume on Google Drive" to see the full document with better formatting
-                </p>
-              </div>
+                             <div className={`mt-6 p-4 rounded-lg ${darkMode ? "bg-gray-800/50" : "bg-gray-50"}`}>
+                 <p className={`text-xs text-center ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+                   💡 Tip: Click "View Resume" to see the full document in your browser
+                 </p>
+               </div>
             </div>
           </div>
         </div>
