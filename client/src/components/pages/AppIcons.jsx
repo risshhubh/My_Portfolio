@@ -273,7 +273,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
                 {/* Action Buttons */}
                 <div className="space-y-3">
                   <a
-                    href="https://drive.google.com/file/d/1Af2nFD3sbEboxazUWyEaXBVS-_LhFHI9/view?usp=drive_link"
+                    href="https://drive.google.com/file/d/1mqY1I_D6UsD3ktfwDVduHAegNnE4tWns/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
@@ -291,7 +291,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
                   </a>
                   
                   <a
-                    href="https://drive.google.com/file/d/1Af2nFD3sbEboxazUWyEaXBVS-_LhFHI9/view?usp=drive_link"
+                    href="https://drive.google.com/file/d/1mqY1I_D6UsD3ktfwDVduHAegNnE4tWns/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
