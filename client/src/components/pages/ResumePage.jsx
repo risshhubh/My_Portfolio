@@ -11,7 +11,7 @@ const ResumePage = () => {
       {/* Resume Preview */}
       <div className="my-2 mx-2 rounded-md overflow-hidden shadow border h-[80vh]">
         <iframe
-          src="https://drive.google.com/file/d/1Af2nFD3sbEboxazUWyEaXBVS-_LhFHI9/view?usp=drive_link"
+          src="https://drive.google.com/file/d/1mqY1I_D6UsD3ktfwDVduHAegNnE4tWns/view?usp=drive_link"
           title="Resume"
           className="w-full h-full"
           style={{ border: "none" }}
@@ -21,7 +21,7 @@ const ResumePage = () => {
       {/* Download/View Buttons */}
       <div className="px-4 pt-2 pb-3 bg-gray-100 text-center rounded-md mx-2 border-t shadow-sm space-y-2">
         <a
-          href="https://drive.google.com/file/d/1Af2nFD3sbEboxazUWyEaXBVS-_LhFHI9/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1mqY1I_D6UsD3ktfwDVduHAegNnE4tWns/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition"
@@ -30,7 +30,7 @@ const ResumePage = () => {
         </a>
         <br />
         <a
-          href="https://drive.google.com/file/d/1Af2nFD3sbEboxazUWyEaXBVS-_LhFHI9/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1mqY1I_D6UsD3ktfwDVduHAegNnE4tWns/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 transition"
