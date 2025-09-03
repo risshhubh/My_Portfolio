@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGithub, FaExternalLinkAlt, FaCode, FaStar, FaEye } from "react-icons/fa";
 import { MdDescription } from "react-icons/md";
+import getImagePath from "../../utils/imagePaths";
 
 const ProjectsPage = ({ darkMode = false }) => {
   const projects = [
@@ -10,7 +11,7 @@ const ProjectsPage = ({ darkMode = false }) => {
       technologies: ["React", "Node.js", "Google Maps API", "MongoDB", "Razorpay API"],
       githubUrl: "https://github.com/risshhubh/Feasto_App.git",
       liveUrl: "https://risshhubh.github.io/Feasto_App/",
-      image: "/My_Portfolio/feasto/homepage-hero.png",
+      image: getImagePath("/feasto/homepage-hero.png"),
       stars: 15,
       views: 120,
       featured: true
@@ -21,7 +22,7 @@ const ProjectsPage = ({ darkMode = false }) => {
       technologies: ["React", "MongoDB", "JavaScript", "Node.js","Express.js", "APIs"],
       githubUrl: "https://github.com/risshhubh/My_Portfolio.git",
       liveUrl: "https://risshhubh.github.io/My_Portfolio/",
-      image: "/My_Portfolio/profilephoto.jpg",
+      image: getImagePath("/profilephoto.jpg"),
       stars: 8,
       views: 85,
       featured: true
@@ -32,7 +33,7 @@ const ProjectsPage = ({ darkMode = false }) => {
       technologies: ["React", "OpenWeather API", "Chart.js", "Geolocation API"],
       githubUrl: "https://github.com/risshhubh/weather-app",
       liveUrl: "https://weather-app-demo.vercel.app",
-      image: "/My_Portfolio/feasto/italian-spoon-menu.png",
+      image: getImagePath("/feasto/italian-spoon-menu.png"),
       stars: 4,
       views: 45,
       featured: false,

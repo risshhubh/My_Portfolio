@@ -3,6 +3,7 @@ import StatusBar from "../StatusBar";
 import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt, FaClock, FaUserTie, FaCode } from "react-icons/fa";
 import { MdDescription } from "react-icons/md";
 import ProjectsPage from "./ProjectsPage";
+import getImagePath from "../../utils/imagePaths";
 
 const DateTimePage = ({ darkMode = false }) => {
   const [time, setTime] = useState("");
@@ -80,7 +81,7 @@ const DateTimePage = ({ darkMode = false }) => {
         <div className={`flex flex-col items-center mb-8 transition-all duration-700 ease-out transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '200ms' }}>
           <div className={`w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden border-4 ${darkMode ? "border-white/20" : "border-white/30"} shadow-lg mb-4 relative`}>
             <img 
-              src="/My_Portfolio/profilephoto.jpg"
+              src={getImagePath("/profilephoto.jpg")}
               alt="Rishabh Srivastava"
               className="w-full h-full object-cover"
               onLoad={() => console.log('Profile image loaded successfully')}

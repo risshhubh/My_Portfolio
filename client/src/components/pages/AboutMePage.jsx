@@ -26,6 +26,7 @@ import {
   FaPlane,
   FaCoffee,
 } from "react-icons/fa";
+import getImagePath from "../../utils/imagePaths";
 
 const AboutMePage = ({ darkMode = false }) => {
   return (
@@ -41,7 +42,7 @@ const AboutMePage = ({ darkMode = false }) => {
         <div className={`rounded-xl p-6 ${darkMode ? "bg-gray-800" : "bg-white"} shadow-lg`}>
           <div className="text-center">
             <img 
-              src="/My_Portfolio/profilephoto.jpg"
+              src={getImagePath("/profilephoto.jpg")}
               alt="Rishabh Srivastava"
               className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-gray-200 dark:border-gray-600 shadow-lg"
             />

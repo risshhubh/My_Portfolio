@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { FaFolder, FaImages, FaArrowLeft, FaTimes, FaChevronLeft, FaChevronRight, FaExpand, FaCompress } from "react-icons/fa";
+import getImagePath from "../../utils/imagePaths";
 
 const PhotosPage = ({ darkMode = false }) => {
   const [selectedAlbum, setSelectedAlbum] = useState(null);
@@ -16,35 +17,35 @@ const PhotosPage = ({ darkMode = false }) => {
       icon: "🍽️",
       photos: [
         {
-          src: "/My_Portfolio/feasto/homepage-hero.png",
+          src: getImagePath("/feasto/homepage-hero.png"),
           alt: "Feasto Homepage - Hero Section with 'Dine Like Royalty'"
         },
         {
-          src: "/My_Portfolio/feasto/restaurant-listing.png",
+          src: getImagePath("/feasto/restaurant-listing.png"),
           alt: "Feasto Restaurant Grid - Featured Restaurants"
         },
         {
-          src: "/My_Portfolio/feasto/italian-spoon-menu.png",
+          src: getImagePath("/feasto/italian-spoon-menu.png"),
           alt: "The Italian Spoon Menu - Restaurant Menu Page"
         },
         {
-          src: "/My_Portfolio/feasto/pizza-restaurants.png",
+          src: getImagePath("/feasto/pizza-restaurants.png"),
           alt: "Top Pizza Restaurants - Category Browse with Sidebar"
         },
         {
-          src: "/My_Portfolio/feasto/italian-spoon-menu-grid.png",
+          src: getImagePath("/feasto/italian-spoon-menu-grid.png"),
           alt: "The Italian Spoon Menu Grid - Menu Items Layout"
         },
         {
-          src: "/My_Portfolio/feasto/welcome-page.png",
+          src: getImagePath("/feasto/welcome-page.png"),
           alt: "Feasto Welcome Page - Burger and Fries Hero Image"
         },
         {
-          src: "/My_Portfolio/feasto/login-modal.png",
+          src: getImagePath("/feasto/login-modal.png"),
           alt: "Feasto Login Modal - Authentication Overlay"
         },
         {
-          src: "/My_Portfolio/feasto/signup-modal.png",
+          src: getImagePath("/feasto/signup-modal.png"),
           alt: "Feasto Sign Up Modal - Registration Form"
         }
       ]
