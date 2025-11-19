@@ -5,12 +5,13 @@ import { MdDescription } from "react-icons/md";
 import ProjectsPage from "./ProjectsPage";
 import getImagePath from "../../utils/imagePaths";
 
-const DateTimePage = ({ darkMode = false }) => {
+const DateTimePage = ({ darkMode = false, onSubpageChange }) => {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
   const [showProjects, setShowProjects] = useState(false);
   const [showResume, setShowResume] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [profileImageError, setProfileImageError] = useState(false);
 
 
 
@@ -38,10 +39,12 @@ const DateTimePage = ({ darkMode = false }) => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
     }, 100);
+
     
     return () => {
       clearInterval(interval);
       clearTimeout(timer);
+      // no local slide tip timers
     };
   }, []);
 
@@ -65,6 +68,13 @@ const DateTimePage = ({ darkMode = false }) => {
   const toggleProjects = () => setShowProjects(!showProjects);
   const toggleResume = () => setShowResume(!showResume);
 
+  // Notify parent (HomeSlides) when a subpage/overlay opens or closes
+  useEffect(() => {
+    if (typeof onSubpageChange === "function") {
+      onSubpageChange(showProjects || showResume);
+    }
+  }, [showProjects, showResume, onSubpageChange]);
+
   return (
     <div
       className={`w-full h-full flex flex-col relative bg-gradient-to-b ${darkMode ? "from-gray-900 via-gray-800 to-gray-700" : "from-blue-50 via-indigo-50 to-purple-50"}`}
@@ -79,20 +89,28 @@ const DateTimePage = ({ darkMode = false }) => {
       <div className="flex-1 flex flex-col items-center justify-start pt-8 sm:pt-12 px-4">
         {/* Profile Image */}
         <div className={`flex flex-col items-center mb-8 transition-all duration-700 ease-out transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '200ms' }}>
-          <div className={`w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden border-4 ${darkMode ? "border-white/20" : "border-white/30"} shadow-lg mb-4 relative`}>
-            <img 
+          <div className={`w-36 h-36 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 ${darkMode ? "border-white/20" : "border-white/30"} shadow-lg mb-4 relative`}>
+            <img
               src={getImagePath("/profilephoto.jpg")}
               alt="Rishabh Srivastava"
               className="w-full h-full object-cover"
-              onLoad={() => console.log('Profile image loaded successfully')}
-              onError={(e) => {
-                console.log('Profile image failed to load, showing fallback');
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
+              onLoad={() => {
+                console.log('Profile image loaded successfully');
+                setProfileImageError(false);
               }}
+              onError={(e) => {
+                console.log('Profile image failed to load:', e.target.src);
+                setProfileImageError(true);
+              }}
+              style={{ display: profileImageError ? 'none' : 'block' }}
             />
+
             {/* Placeholder fallback */}
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl sm:text-2xl lg:text-3xl" style={{ display: 'none' }}>
+            <div
+              className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl sm:text-2xl lg:text-3xl"
+              style={{ display: profileImageError ? 'flex' : 'none' }}
+              aria-hidden={!profileImageError}
+            >
               RS
             </div>
           </div>
@@ -172,6 +190,14 @@ const DateTimePage = ({ darkMode = false }) => {
         <div className={`w-24 h-1.5 rounded-full ${darkMode ? "bg-white" : "bg-gray-400"}`} />
       </div>
 
+      {/* Slide tip (bottom-right) - visible on all screen sizes */}
+      <div className=""> 
+        <div className={`absolute bottom-6 right-4 z-50 flex items-center justify-end pointer-events-auto`}>
+          {/* Popover that appears above the pill */}
+          {/* Local slide tip removed — using global SlideTip component instead */}
+        </div>
+      </div>
+
       {/* Projects Overlay */}
       {showProjects && (
         <div className={`absolute top-0 left-0 w-full h-full ${darkMode ? "bg-[#23272f]" : "bg-white"} z-50 shadow-2xl rounded-xl sm:rounded-2xl animate-slide-up flex flex-col`} role="dialog" aria-modal="true" aria-label="Projects">
@@ -240,16 +266,16 @@ const DateTimePage = ({ darkMode = false }) => {
 
               {/* Action Buttons */}
               <div className="space-y-3">
-                                 <a
-                   href={getImagePath("/RESUME.pdf")}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
-                     darkMode 
-                       ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl" 
-                       : "bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg"
-                   }`}
-                 >
+                                <a
+                                 href="https://drive.google.com/file/d/1FsLr51ih_jKxXQ6L1uA0ixNxdTBeWmog/view?usp=drive_link"
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                                   darkMode 
+                                     ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl" 
+                                     : "bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg"
+                                 }`}
+                               >
                    <div className="flex items-center justify-center gap-2">
                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -259,7 +285,7 @@ const DateTimePage = ({ darkMode = false }) => {
                  </a>
                  
                  <a
-                   href={getImagePath("/RESUME.pdf")}
+                   href="https://drive.google.com/file/d/1FsLr51ih_jKxXQ6L1uA0ixNxdTBeWmog/view?usp=drive_link"
                    target="_blank"
                    rel="noopener noreferrer"
                    className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${

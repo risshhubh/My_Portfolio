@@ -274,7 +274,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
                 {/* Action Buttons */}
                 <div className="space-y-3">
                   <a
-                    href={getImagePath("/RESUME.pdf")}
+                    href="https://drive.google.com/file/d/1FsLr51ih_jKxXQ6L1uA0ixNxdTBeWmog/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
@@ -292,7 +292,7 @@ const AppIcons = ({ darkMode, setDarkMode, onSubpageChange }) => {
                   </a>
                   
                   <a
-                    href={getImagePath("/RESUME.pdf")}
+                    href="https://drive.google.com/file/d/1FsLr51ih_jKxXQ6L1uA0ixNxdTBeWmog/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 ${

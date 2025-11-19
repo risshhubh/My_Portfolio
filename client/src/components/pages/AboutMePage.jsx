@@ -44,7 +44,7 @@ const AboutMePage = ({ darkMode = false }) => {
             <img 
               src={getImagePath("/profilephoto.jpg")}
               alt="Rishabh Srivastava"
-              className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-gray-200 dark:border-gray-600 shadow-lg"
+              className="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-gray-200 dark:border-gray-600 shadow-lg"
             />
             <h2 className={`text-2xl font-bold ${darkMode ? "text-white" : "text-gray-800"}`}>
               Rishabh Srivastava

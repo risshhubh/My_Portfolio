@@ -17,14 +17,14 @@ const ProjectsPage = ({ darkMode = false }) => {
       featured: true
     },
     {
-      title: "Portfolio Website",
-      description: "A modern, responsive portfolio website built with React and Tailwind CSS, featuring a mobile-first design and interactive components.",
-      technologies: ["React", "MongoDB", "JavaScript", "Node.js","Express.js", "APIs"],
-      githubUrl: "https://github.com/risshhubh/My_Portfolio.git",
-      liveUrl: "https://risshhubh.github.io/My_Portfolio/",
-      image: getImagePath("/profilephoto.jpg"),
-      stars: 8,
-      views: 85,
+      title: "Pathwise - AI Job Portal",
+      description: "An AI-powered job portal that matches candidates to roles using resume parsing, skill-based recommendations, and intelligent company-job matching.",
+      technologies: ["React", "Node.js", "NLP", "MongoDB", "AI"],
+      githubUrl: "https://github.com/risshhubh/Pathwise",
+      liveUrl: "",
+      image: getImagePath("/feasto/homepage-hero.png"),
+      stars: 20,
+      views: 200,
       featured: true
     },
     {

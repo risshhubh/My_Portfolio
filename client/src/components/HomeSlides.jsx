@@ -3,6 +3,7 @@ import { useSwipeable } from "react-swipeable";
 import DateTimePage from "./pages/DateTimePage";
 import AppIcons from "./pages/AppIcons";
 import WidgetsPage from "./pages/WidgetsPage";
+import SlideTip from "./SlideTip";
 
 const screens = [
   { id: "datetime", Component: DateTimePage },
@@ -63,11 +64,47 @@ const HomeSlides = ({ darkMode, setDarkMode }) => {
             <Component 
               darkMode={darkMode} 
               setDarkMode={setDarkMode} 
-              onSubpageChange={id === "appicons" ? setIsSubpageOpen : undefined}
+              onSubpageChange={id === "appicons" || id === "datetime" ? setIsSubpageOpen : undefined}
             />
           </div>
         ))}
       </div>
+      {/* Global slide tip: right arrow on first screen, left arrow on others. Hidden when any subpage is open */}
+      {!isSubpageOpen && (
+        currentScreen === 1 ? (
+          // AppIcons screen: show both left and right arrows
+          <>
+            <SlideTip
+              direction="left"
+              position="left"
+              popoverText="Go back"
+              onClick={() => setCurrentScreen((prev) => (prev - 1 + screens.length) % screens.length)}
+            />
+            <SlideTip
+              direction="right"
+              position="right"
+              popoverText="Go forward"
+              onClick={() => setCurrentScreen((prev) => (prev + 1) % screens.length)}
+            />
+          </>
+        ) : (
+          // Default: single tip. On first screen show a longer popover so user notices it
+          <SlideTip
+            direction={currentScreen === 0 ? "right" : "left"}
+            position={currentScreen === 0 ? "right" : "right"}
+            popoverText={currentScreen === 0 ? "Slide to view more" : "Slide to go back"}
+            showDelay={1200}
+            hideDelay={currentScreen === 0 ? 9000 : 6000}
+            onClick={() => {
+              if (currentScreen === 0) {
+                setCurrentScreen((prev) => (prev + 1) % screens.length);
+              } else {
+                setCurrentScreen((prev) => (prev - 1 + screens.length) % screens.length);
+              }
+            }}
+          />
+        )
+      )}
       {/* Navigation Dots */}
       <div className="absolute bottom-7 w-full flex justify-center gap-3" aria-label="Screen navigation dots">
         {screens.map((screen, index) => (
