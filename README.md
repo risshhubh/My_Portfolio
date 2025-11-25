@@ -14,7 +14,7 @@
 
 | 🌐 Platform | 🔗 URL |
 |------------|--------|
-| **Frontend** | [risshhubh.github.io/My_Portfolio](https://risshhubh.github.io/My_Portfolio/) |
+| **Frontend** | [https://my-portfolio-risshhubhs-projects.vercel.app/](https://my-portfolio-risshhubhs-projects.vercel.app/) |
 | **Backend API** | [my-portfolio-a19u.onrender.com](https://my-portfolio-a19u.onrender.com) |
 
 </div>
@@ -443,3 +443,4 @@ in the Software without restriction...
 Made with ❤️ by Rishabh Srivastava
 
 </div>
+
