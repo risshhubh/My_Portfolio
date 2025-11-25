@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1365" height="432" viewBox="0 0 1365 432">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0" stop-color="#020205"/>
+      <stop offset="1" stop-color="#07060a"/>
+    </linearGradient>
+    <linearGradient id="cardGlow" x1="0" x2="1">
+      <stop offset="0" stop-color="#0ea5ff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0.12"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)" />
+
+  <!-- decorative purple wave (left) -->
+  <g transform="translate(70,220)">
+    <path d="M-150 60 C -60 20 40 -40 240 -60 C 480 -85 600 40 740 60 C 860 74 960 16 1100 -12 C 1250 -44 1350 -10 1400 10" fill="none" stroke="#5b21b6" stroke-opacity="0.28" stroke-width="260" stroke-linecap="round"/>
+  </g>
+
+  <!-- centered card -->
+  <g transform="translate(455,56)">
+    <rect x="0" y="0" rx="18" ry="18" width="455" height="320" fill="#070913" stroke="#082033" stroke-width="2"/>
+    <!-- soft glow -->
+    <rect x="-6" y="-6" rx="22" ry="22" width="467" height="332" fill="url(#cardGlow)" opacity="0.5" filter="url(#soft)"/>
+
+    <!-- header -->
+    <text x="50%" y="62" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#68d6ff">Welcome Back</text>
+
+    <!-- inputs -->
+    <rect x="48" y="96" rx="8" width="358" height="40" fill="#06060a" stroke="#1f2937" stroke-width="1"/>
+    <text x="64" y="122" font-family="Inter, Arial, sans-serif" font-size="12" fill="#9ca3af">Email Address</text>
+
+    <rect x="48" y="148" rx="8" width="358" height="40" fill="#06060a" stroke="#1f2937" stroke-width="1"/>
+    <text x="64" y="174" font-family="Inter, Arial, sans-serif" font-size="12" fill="#9ca3af">Password</text>
+
+    <!-- login button -->
+    <rect x="48" y="202" rx="10" width="358" height="38" fill="url(#loginGrad)" />
+    <defs>
+      <linearGradient id="loginGrad" x1="0" x2="1">
+        <stop offset="0" stop-color="#4f46e5"/>
+        <stop offset="1" stop-color="#8b5cf6"/>
+      </linearGradient>
+    </defs>
+    <text x="50%" y="228" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#fff">Login</text>
+
+    <!-- OR divider -->
+    <line x1="64" x2="196" y1="258" y2="258" stroke="#111827" stroke-width="1" opacity="0.6"/>
+    <line x1="260" x2="392" y1="258" y2="258" stroke="#111827" stroke-width="1" opacity="0.6"/>
+    <text x="228" y="262" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#9ca3af">OR</text>
+
+    <!-- Google button -->
+    <rect x="110" y="274" rx="20" width="235" height="36" fill="#fff" stroke="#111827" stroke-opacity="0.06"/>
+    <text x="50%" y="298" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#111827">Continue with Google</text>
+
+    <!-- small footer text -->
+    <text x="50%" y="320" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#60a5fa">Don't have an account? Sign Up</text>
+  </g>
+
+  <!-- top-left logo -->
+  <g transform="translate(20,18)">
+    <text x="0" y="18" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="20" fill="#0ea5ff">Pathwise</text>
+    <text x="0" y="36" font-family="Inter, Arial, sans-serif" font-size="10" fill="#7c3aed">AI Job Portal</text>
+  </g>
+</svg>
