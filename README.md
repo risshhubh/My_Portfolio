@@ -1,13 +1,13 @@
+<div align="center">
+
 # Rishabh's Portfolio - v2.0
 
 ### **[🔴 Live Demo](https://rishabh-portfoliopro.vercel.app/)**
 
+<img src="./public/device-preview.png" alt="Device Preview" width="100%" />
+
 A modern, high-performance portfolio website built with **Next.js**, **TypeScript**, and **Tailwind CSS**. Designed to showcase my skills, projects, and professional journey with smooth animations and a premium UI.
 
-## 📸 Preview
-
-<div align="center">
-  <img src="./public/device-preview.png" alt="Device Preview" width="100%" />
 </div>
 
 ## 🚀 Tech Stack
