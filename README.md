@@ -2,13 +2,14 @@
 
 A modern, high-performance portfolio website built with **Next.js**, **TypeScript**, and **Tailwind CSS**. Designed to showcase my skills, projects, and professional journey with smooth animations and a premium UI.
 
-[🔴 Live Demo](CHANGE_THIS_TO_YOUR_DEPLOYED_URL)
+[🔴 Live Demo](https://rishabh-portfoliopro.vercel.app/)
 
 ## 📸 Preview
 
-![Portfolio Preview](./preview.png)
-
-> _(Please place your preview image in the root directory and name it `preview.png`, or update this path)_
+<div align="center">
+  <img src="./public/laptoppreview.png" alt="Desktop View" width="65%" />
+  <img src="./public/mobilepreview.png" alt="Mobile View" width="25%" />
+</div>
 
 ## 🚀 Tech Stack
 
