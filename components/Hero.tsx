@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Instagram, FileText, Twitter, X } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Github, Linkedin, Instagram, FileText, Twitter } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function Hero() {
@@ -9,7 +9,7 @@ export default function Hero() {
     const [isDeleting, setIsDeleting] = useState(false);
     const [loopNum, setLoopNum] = useState(0);
     const [delta, setDelta] = useState(100);
-    const [showResume, setShowResume] = useState(false);
+
 
     const toRotate = ["Full Stack Developer.", "Software Developer."];
     const period = 2000;
@@ -43,13 +43,7 @@ export default function Hero() {
         }
     };
 
-    useEffect(() => {
-        if (showResume) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-    }, [showResume]);
+
 
     return (
         <section id="home" className="relative h-auto md:min-h-screen flex items-start md:items-center bg-[#FAFAFA] overflow-hidden pt-32 pb-12 md:pt-20 md:pb-24">
@@ -124,13 +118,15 @@ export default function Hero() {
 
                         {/* Resume Button */}
                         <div>
-                            <button
-                                onClick={() => setShowResume(true)}
+                            <a
+                                href="https://drive.google.com/file/d/10PHGmWrm5CLg3Al7a-4XLXU170A12s2M/view?usp=drive_link"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-full text-black font-semibold hover:border-black transition-all hover:shadow-md bg-white group cursor-pointer"
                             >
                                 <FileText size={20} className="text-gray-600 group-hover:text-black transition-colors" />
                                 View Resume
-                            </button>
+                            </a>
                         </div>
                     </motion.div>
 
@@ -149,46 +145,6 @@ export default function Hero() {
                     </motion.div>
                 </div>
             </div>
-
-
-            {/* Resume Modal */}
-            <AnimatePresence>
-                {
-                    showResume && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="fixed inset-0 z-[100] bg-[#FAFAFA] overflow-y-auto"
-                        >
-                            {/* Background Grid */}
-                            <div className="fixed inset-0 z-0">
-                                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                            </div>
-
-                            {/* Close Button */}
-                            <button
-                                onClick={() => setShowResume(false)}
-                                className="fixed top-6 right-6 z-50 p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors border border-gray-200"
-                            >
-                                <X size={24} className="text-gray-900" />
-                            </button>
-
-                            {/* Content */}
-                            <div className="w-full min-h-screen flex justify-center items-start py-20 relative z-10 px-4">
-                                <motion.img
-                                    initial={{ scale: 0.95, opacity: 0 }}
-                                    animate={{ scale: 1, opacity: 1 }}
-                                    exit={{ scale: 0.95, opacity: 0 }}
-                                    src="/resume.png"
-                                    alt="Rishabh Srivastava Resume"
-                                    className="w-full max-w-4xl h-auto rounded-lg shadow-2xl bg-white"
-                                />
-                            </div>
-                        </motion.div>
-                    )
-                }
-            </AnimatePresence >
         </section >
     );
 }
