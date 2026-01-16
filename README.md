@@ -1,14 +1,13 @@
-# ⚡ Digital Portfolio
+# Rishabh's Portfolio - v2.0
+
+### **[🔴 Live Demo](https://rishabh-portfoliopro.vercel.app/)**
 
 A modern, high-performance portfolio website built with **Next.js**, **TypeScript**, and **Tailwind CSS**. Designed to showcase my skills, projects, and professional journey with smooth animations and a premium UI.
-
-[🔴 Live Demo](https://rishabh-portfoliopro.vercel.app/)
 
 ## 📸 Preview
 
 <div align="center">
-  <img src="./public/laptoppreview.png" alt="Desktop View" width="65%" />
-  <img src="./public/mobilepreview.png" alt="Mobile View" width="25%" />
+  <img src="./public/device-preview.png" alt="Device Preview" width="100%" />
 </div>
 
 ## 🚀 Tech Stack
