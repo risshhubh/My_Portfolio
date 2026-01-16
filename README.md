@@ -12,54 +12,66 @@ A modern, high-performance portfolio website built with **Next.js**, **TypeScrip
 
 ## 🚀 Tech Stack
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Smooth Scroll**: [Lenis](https://github.com/darkroomengineering/lenis)
-- **Email**: [Nodemailer](https://nodemailer.com/)
+<div align="center">
+
+| Core | Styling | Motion | Tools |
+| :---: | :---: | :---: | :---: |
+| ![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white) | ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) | ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white) | ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) |
+| **App Router** | **CSS Modules** | **Animations** | **Type Safety** |
+
+</div>
+
+<br />
 
 ## ✨ Features
 
-- **Responsive Design**: Looks great on all devices (Mobile, Tablet, Desktop).
-- **Interactive UI**: Engaging user experience with scroll animations and hover effects.
-- **Dynamic Projects**: Showcase of my latest work with detailed descriptions.
-- **Contact Form**: Functional contact form powered by Nodemailer.
-- **Modern Aesthetics**: Sleek dark mode, glassmorphism, and custom typography.
-- **Optimized Performance**: Fast loading times and SEO friendly.
+| Feature | Description |
+| :--- | :--- |
+| 📱 **Responsive** | Fully responsive design ensuring perfect rendering on Mobile, Tablet, and Desktop. |
+| 🎨 **UI/UX** | Premium aesthetic with Dark Mode, Glassmorphism, and smooth transitions. |
+| ⚡ **Fast** | Optimized with Next.js specific features for lightning-fast load times. |
+| 📧 **Contact** | Integrated `Nodemailer` for seamless email communication directly from the app. |
+| 🌊 **Smooth Scroll** | Implemented `Lenis` for a luxurious, buttery-smooth scrolling experience. |
 
-## 🛠️ Installation
+## 🛠️ Getting Started
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/risshhubh/My_Portfolio.git
-    cd My_Portfolio
-    ```
+Follow these steps to set up the project locally.
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
+### 1. Clone the repo
+```bash
+git clone https://github.com/risshhubh/My_Portfolio.git
+cd My_Portfolio
+```
 
-3.  **Setup Environment Variables:**
-    Create a `.env.local` file in the root directory and add your email configuration:
-    ```env
-    EMAIL_APP_PASSWORD=your_app_password
-    ```
+### 2. Install Dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-4.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
+### 3. Environment Setup
+Create a `.env.local` file in the root directory:
+```env
+EMAIL_APP_PASSWORD=your_app_password
+```
 
-5.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 4. Run Development Server
+```bash
+npm run dev
+```
+Visit `http://localhost:3000` to view the application.
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
+We welcome contributions! Please feel free to check the [issues page](https://github.com/risshhubh/My_Portfolio/issues) if you want to contribute.
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+---
+
+<div align="center">
+  <p>Made with ❤️ by Rishabh</p>
+</div>
