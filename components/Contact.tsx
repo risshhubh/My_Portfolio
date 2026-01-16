@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -88,6 +88,25 @@ export default function Contact() {
                             Have a project in mind or want to discuss the latest tech?
                             I'm always open to new opportunities and interesting conversations.
                         </p>
+
+                        {/* Social Links */}
+                        <div className="flex gap-4">
+                            {[
+                                { Icon: Linkedin, href: 'https://www.linkedin.com/in/rishabh-srivastava-5a509232a/' },
+                                { Icon: Instagram, href: 'https://www.instagram.com/risshhabh_' },
+                                { Icon: Github, href: 'https://github.com/risshhubh' }
+                            ].map((item, index) => (
+                                <a
+                                    key={index}
+                                    href={item.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 flex items-center justify-center border border-black rounded-lg hover:bg-black hover:text-white transition-all duration-300"
+                                >
+                                    <item.Icon size={20} />
+                                </a>
+                            ))}
+                        </div>
                     </motion.div>
 
                     <motion.div
@@ -163,6 +182,6 @@ export default function Contact() {
                     <p className="mt-2 md:mt-0">Designed & Built with <span className="text-red-500">♥</span></p>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

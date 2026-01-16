@@ -91,7 +91,7 @@ export default function Hero() {
                             className="h-2 bg-purple-400 mb-6 md:mb-8 rounded-full"
                         ></motion.div>
 
-                        <h2 className="text-2xl md:text-4xl text-gray-800 font-medium mb-6 md:mb-8 h-8 md:h-auto overflow-visible whitespace-nowrap">
+                        <h2 className="text-[22.8px] md:text-4xl text-gray-800 font-medium mb-6 md:mb-8 h-8 md:h-auto overflow-visible whitespace-nowrap">
                             I am a Passionate <span className="font-bold">{text}</span>
                             <span className="text-purple-600 animate-pulse">|</span>
                         </h2>
@@ -99,7 +99,6 @@ export default function Hero() {
                         {/* Social Icons */}
                         <div className="flex gap-4 mb-6 md:mb-8">
                             {[
-                                { Icon: Twitter, href: '#' },
                                 { Icon: Linkedin, href: 'https://www.linkedin.com/in/rishabh-srivastava-5a509232a/' },
                                 { Icon: Instagram, href: 'https://www.instagram.com/risshhabh_' },
                                 { Icon: Github, href: 'https://github.com/risshhubh' }
