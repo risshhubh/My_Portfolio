@@ -118,7 +118,7 @@ export default function Hero() {
                         {/* Resume Button */}
                         <div>
                             <a
-                                href="https://drive.google.com/file/d/1ikQWKeAy4O7kcmJInGlJbOjvXGvdcHln/view?usp=drive_link"
+                                href="https://drive.google.com/file/d/1OWdEfIyc3B4Hr51np9Vh6Xr2bbNZvzQ5/view?usp=drive_link"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-full text-black font-semibold hover:border-black transition-all hover:shadow-md bg-white group cursor-pointer"
