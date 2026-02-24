@@ -42,9 +42,9 @@ const skillCategories: SkillCategory[] = [
         title: 'Languages',
         skills: [
             { name: 'TypeScript', iconSlug: 'typescript' },
+            { name: 'Python', iconSlug: 'python' },
             { name: 'JavaScript', iconSlug: 'javascript' },
             { name: 'Java', image: '/java.svg' },
-            { name: 'Python', iconSlug: 'python' },
             { name: 'C++', iconSlug: 'cplusplus' },
             { name: 'C', iconSlug: 'c' }
         ]

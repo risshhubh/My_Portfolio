@@ -44,7 +44,7 @@ export default function Introduction() {
                             <div className="w-32 h-2 bg-purple-300 mb-10 rounded-full"></div>
 
                             <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mb-6">
-                                I am a B.Tech CSE student proficient in MERN Full Stack, Java and JavaScript. I have engineered full-stack applications including Feasto, a food delivery platform with real-time location APIs, and PathWise, an AI-driven job portal with Google OAuth integration.
+                                I am a B.Tech CSE student proficient in MERN Full Stack, Java, Python and JavaScript. I have engineered full-stack applications including Feasto, a food delivery platform with real-time location APIs, and PathWise, an AI-driven job portal with Google OAuth integration.
                             </p>
                             <p className="text-gray-600 text-lg leading-relaxed max-w-3xl">
                                 Skilled in scalable architecture, REST API integration, and clean code standards, I am dedicated to building efficient, user-centric software solutions within high-growth engineering teams.
@@ -74,6 +74,10 @@ export default function Introduction() {
                                 <li className="flex items-center gap-3">
                                     <span className="w-1.5 h-1.5 rounded-full border border-gray-600"></span>
                                     Hindi
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <span className="w-1.5 h-1.5 rounded-full border border-gray-600"></span>
+                                    Python
                                 </li>
                             </ul>
                         </motion.div>
