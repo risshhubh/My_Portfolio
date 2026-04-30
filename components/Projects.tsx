@@ -22,6 +22,26 @@ interface Project {
 
 const projects: Project[] = [
     {
+        title: "MedicAi",
+        tagline: <>AI Healthcare <span className="text-purple-600">Platform</span></>,
+        description:
+            "An intelligent healthcare platform featuring RAG-powered medical chat and document analysis capabilities.",
+        features: [
+            "AI Document Analysis",
+            "RAG-Powered Medical Chat",
+            "Secure Patient Dashboard",
+            "Real-time Health Insights",
+        ],
+        stack: ["React", "Node.js", "Express", "Tailwind CSS"],
+        src: "/medicai.png",
+        mobileSrc: "/mobile_medicai.png",
+        bg: "bg-[#F5F5F0]",
+        links: {
+            github: "https://github.com/risshhubh/MedicAi",
+            live: "https://medic-ai-helper.vercel.app/",
+        },
+    },
+    {
         title: (
             <>
                 PathWise <span className="text-2xl font-normal text-neutral-600">(Group Project)</span>
@@ -65,26 +85,6 @@ const projects: Project[] = [
             live: "https://feasto-app.vercel.app/",
         },
         imageClassName: "object-left-top",
-    },
-    {
-        title: "AutoVerse",
-        tagline: <>Premium Automotive <span className="text-purple-600">Showroom</span></>,
-        description:
-            "An interactive 3D showroom experience allowing users to customize and explore car models in real-time.",
-        features: [
-            "Immersive 3D Customization",
-            "Real-time Configuration",
-            "360° Vehicle Exploration",
-            "High-Fidelity Rendering",
-        ],
-        stack: ["React", "Three.js", "Tailwind", "Framer Motion"],
-        src: "/autoverse.png",
-        mobileSrc: "/mobile_autoverse.png",
-        bg: "bg-[#F5F5F0]",
-        links: {
-            github: "https://github.com/risshhubh/AutoVerse",
-            live: "https://auto-verseworld.vercel.app/",
-        },
     },
 ];
 
